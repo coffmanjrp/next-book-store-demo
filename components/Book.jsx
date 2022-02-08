@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import cartState from '../recoil/atoms/cartState';
+import { cartState } from '../recoil/atoms';
 
 const Book = ({ id, data }) => {
   const [cart, setCart] = useRecoilState(cartState);
@@ -16,7 +16,7 @@ const Book = ({ id, data }) => {
           <img src={data.image} alt={data.title} />
         </div>
         <div>
-          <p>{data.price}円（税抜）</p>
+          <p>{data.price}円（税込）</p>
           <button onClick={() => addBookHandler(id)}>カートに追加</button>
         </div>
       </div>
